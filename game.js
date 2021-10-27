@@ -21,14 +21,18 @@ function computerPlay() {
 computerPlay();
 
 function playRound(playerSelection, computerSelection){
-    let outcome;
+    let outcome='';
+    let winner='';
 
     if ((playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Rock")){
         outcome = "You Win! " + playerSelection + " beats " + computerSelection;
+        winner = "Player";
     } else if(playerSelection == computerSelection){
         outcome = "You Tie! " + computerSelection + " is the same as " + playerSelection;
+        winner = "None";
     } else {
         outcome = "You Lose! " + computerSelection + " beats " + playerSelection;
+        winner = "Computer";
     }
 
     return outcome;
@@ -37,9 +41,10 @@ function playRound(playerSelection, computerSelection){
 
 }
 
-const playerSelection = "Paper";
-const computerSelection = computerPlay();
+let playerSelection = prompt("Choose: Rock, Paper, or Scissors");
+let computerSelection = computerPlay();
 
 console.log(playRound(playerSelection, computerSelection));
 
+console.log(playRound(playerSelection, computerSelection));
 
