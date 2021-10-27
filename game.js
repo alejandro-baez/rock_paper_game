@@ -14,8 +14,32 @@ function computerPlay() {
         comp= 'Scissors';
     }
 
-    /* return comp; */
-    console.log(comp); //Figure out diff between return and console.log
+    return comp; 
+   // console.log(comp); //Figure out diff between return and console.log
 }
 
 computerPlay();
+
+function playRound(playerSelection, computerSelection){
+    let outcome;
+
+    if ((playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Rock")){
+        outcome = "You Win! " + playerSelection + " beats " + computerSelection;
+    } else if(playerSelection == computerSelection){
+        outcome = "You Tie! " + computerSelection + " is the same as " + playerSelection;
+    } else {
+        outcome = "You Lose! " + computerSelection + " beats " + playerSelection;
+    }
+
+    return outcome;
+    //console.log(outcome); Better not to use this atm
+
+
+}
+
+const playerSelection = "Paper";
+const computerSelection = computerPlay();
+
+console.log(playRound(playerSelection, computerSelection));
+
+
