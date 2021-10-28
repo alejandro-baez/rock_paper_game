@@ -96,11 +96,11 @@ for(let numGames=0 ; numGames<5 ; numGames++){
     
 }
 
-if(playerWins > compWins && playerWins > tie){
-    console.log("Congrats You Win by: " + playerWins+ " points");
+if(playerWins > compWins){
+    console.log("Congrats You Win By: " + (playerWins - compWins)+ " Points");
 }
-else if(compWins > playerWins && compWins > playerWins){
-    console.log("Sorry You Lost by : " + compWins + " points");
+else if(compWins > playerWins){
+    console.log("Sorry You Lost By : " + (compWins - playerWins) + " Points");
 }
 else{
     console.log("Tie")
