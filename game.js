@@ -55,7 +55,7 @@ function playRound(playerSelection, computerSelection){
     if ((playerSelection.toUpperCase() == "ROCK" && computerSelection.toUpperCase() == "SCISSORS") || (playerSelection.toUpperCase() == "SCISSORS" && computerSelection.toUpperCase() == "PAPER") || (playerSelection.toUpperCase() == "PAPER" && computerSelection.toUpperCase() == "ROCK")){
         outcome = "You Win! " + playerSelection + " beats " + computerSelection;
         winner = "Player";
-    } else if(playerSelection == computerSelection){
+    } else if(playerSelection.toUpperCase() == computerSelection.toUpperCase()){
         outcome = "You Tie! " + computerSelection + " is the same as " + playerSelection;
         winner = "None";
     } else {
