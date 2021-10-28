@@ -52,7 +52,7 @@ function playRound(playerSelection, computerSelection){
     let outcome='';
     let winner='';
 
-    if ((playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Rock")){
+    if ((playerSelection.toUpperCase() == "ROCK" && computerSelection.toUpperCase() == "SCISSORS") || (playerSelection.toUpperCase() == "SCISSORS" && computerSelection.toUpperCase() == "PAPER") || (playerSelection.toUpperCase() == "PAPER" && computerSelection.toUpperCase() == "ROCK")){
         outcome = "You Win! " + playerSelection + " beats " + computerSelection;
         winner = "Player";
     } else if(playerSelection == computerSelection){
