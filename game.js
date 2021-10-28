@@ -20,7 +20,12 @@ function computerPlay() {
 
 computerPlay();
 
-function playRound(playerSelection, computerSelection){
+
+/* WORKS!!!!
+function playRound(){
+    let computerSelection = computerPlay();
+    let playerSelection = prompt("Choose: Rock, Paper, or Scissors");
+
     let outcome='';
     let winner='';
 
@@ -41,10 +46,65 @@ function playRound(playerSelection, computerSelection){
 
 }
 
-let playerSelection = prompt("Choose: Rock, Paper, or Scissors");
-let computerSelection = computerPlay();
+*/
 
-console.log(playRound(playerSelection, computerSelection));
+function playRound(playerSelection, computerSelection){
+    let outcome='';
+    let winner='';
 
-console.log(playRound(playerSelection, computerSelection));
+    if ((playerSelection == "Rock" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Rock")){
+        outcome = "You Win! " + playerSelection + " beats " + computerSelection;
+        winner = "Player";
+    } else if(playerSelection == computerSelection){
+        outcome = "You Tie! " + computerSelection + " is the same as " + playerSelection;
+        winner = "None";
+    } else {
+        outcome = "You Lose! " + computerSelection + " beats " + playerSelection;
+        winner = "Computer";
+    }
+
+    return {
+        winner ,
+        outcome
+    
+    }
+
+}
+
+
+let playerWins = 0;
+let compWins = 0;
+let tie =0;
+
+for(let numGames=0 ; numGames<5 ; numGames++){
+    
+    let playerSelection = prompt("Choose: Rock, Paper, or Scissors");
+    let computerSelection = computerPlay();
+    let runRound = playRound(playerSelection, computerSelection);
+    let roundwin = runRound.winner;
+    let message = runRound.outcome;
+     if(roundwin == "Player"){
+         playerWins ++;
+     }
+     if(roundwin == "Computer"){
+         compWins ++;
+     }
+     if(roundwin =="None"){
+          tie ++;
+     }
+    console.log(message); 
+    
+}
+
+if(playerWins > compWins && playerWins > tie){
+    console.log("Congrats You Win by: " + playerWins+ " points");
+}
+else if(compWins > playerWins && compWins > playerWins){
+    console.log("Sorry You Lost by : " + compWins + " points");
+}
+else{
+    console.log("Tie")
+}
+
+
 
