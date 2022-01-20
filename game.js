@@ -21,7 +21,7 @@ function computerPlay() {
 computerPlay();
 
 
-/* WORKS!!!!
+/* WORKS!!!! Alternative to PlayRound()
 function playRound(){
     let computerSelection = computerPlay();
     let playerSelection = prompt("Choose: Rock, Paper, or Scissors");
@@ -77,6 +77,17 @@ function playRound(playerSelection, computerSelection){
 
 }
 
+//Adding event listener to button that calls playRound() function
+const choice = document.querySelector("button");
+choice.addEventListener("click", () => {
+    console.log(playRound(choice.innerHTML,computerPlay())); //Works only with first button 
+});
+
+
+
+
+
+/* Plays 5 Rounds and then determines who won
 
 let playerWins = 0;
 let compWins = 0;
@@ -113,6 +124,7 @@ else{
 }
 
 
+*/
 
 
 
