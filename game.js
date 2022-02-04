@@ -18,6 +18,7 @@ function computerPlay() {
    // console.log(comp); //Figure out diff between return and console.log
 }
 
+//let computerSelection=computerPlay();
 computerPlay();
 
 
@@ -48,41 +49,142 @@ function playRound(){
 
 */
 
+//Keeping Score
+let playerCounter = document.getElementById("playerCounter");
+let compCounter = document.getElementById("compCounter");
+
+let playerScore = 0;
+let compScore = 0;
+
+//Round Winner Announcement
+let roundAnnouncement = document.getElementById("roundAnnouncement");
+
+let winAnnouncement = document.getElementById("winAnnouncement");
+
+//FOR TMM TRY SHOWING WHAT YOU AND THE COMPUTER CHOSE
+//LET IT RUN UNTIL WINNER WINS 5 
+
 function playRound(playerSelection, computerSelection){
     let outcome='';
     let winner='';
+    //playerSelection;
+    //computerSelection=computerPlay();
 
     if (
         (playerSelection.toUpperCase() == "ROCK" && computerSelection.toUpperCase() == "SCISSORS") || 
         (playerSelection.toUpperCase() == "SCISSORS" && computerSelection.toUpperCase() == "PAPER") || 
         (playerSelection.toUpperCase() == "PAPER" && computerSelection.toUpperCase() == "ROCK")
     ) { 
-        outcome = "You Win! " + playerSelection + " beats " + computerSelection;
-        winner = "Player";
+        //outcome = "You Win! " + playerSelection + " beats " + computerSelection;
+        //winner = "Player";
+
+        playerScore += 1;
+        playerCounter.innerHTML = playerScore;
+        roundAnnouncement.innerHTML= "YOU WON THIS ROUND!";
+
+        if(playerScore ==5){
+            winAnnouncement.innerHTML = "GAME OVER! Player WON GAME";
+        //    document.body.removeEventListener("click", playRound);
+            removeClick();
+        }
+
     } 
     else if(playerSelection.toUpperCase() == computerSelection.toUpperCase()){
-        outcome = "You Tie! " + computerSelection + " is the same as " + playerSelection;
-        winner = "None";
+        //outcome = "You Tie! " + computerSelection + " is the same as " + playerSelection;
+        //winner = "None";
+        roundAnnouncement.innerHTML = "TIE! TRY AGAIN";
+        
     } 
     else {
-        outcome = "You Lose! " + computerSelection + " beats " + playerSelection;
-        winner = "Computer";
+        //outcome = "You Lose! " + computerSelection + " beats " + playerSelection;
+        //winner = "Computer";
+        compScore +=1;
+        compCounter.innerHTML = compScore;
+        roundAnnouncement.innerHTML = "YOU LOST THIS ROUND!";
+        
+        if(compScore == 5){
+            winAnnouncement.innerHTML = "GAME OVER! Computer WON GAME";
+        //    document.body.removeEventListener("click", playRound);
+            removeClick();
+        }
     }
 
-    return {
-        winner ,
-        outcome
+    //return {    //If you cant store the event listener maybe you can tweak inside the function you are calling!!!!
+    //    winner ,
+    //    outcome
     
-    }
+    //}
+
+   
 
 }
 
-//Adding event listener to button that calls playRound() function
-const choice = document.querySelector("button");
-choice.addEventListener("click", () => {
-    console.log(playRound(choice.innerHTML,computerPlay())); //Works only with first button 
+function removeClick(){
+
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+        
+        button.removeEventListener("click", playRound);
+        button.disabled=true;
+    });
+
+}
+
+
+
+
+
+//METHOD 1 
+//
+//Looping Adding event listener to button that calls playRound() function 
+//
+const buttons= document.querySelectorAll("button"); //Creates a nodelist with all buttons
+buttons.forEach((button) => {                       //biggest issue is that forEach cannot be bound
+
+    button.addEventListener("click", () => {
+        playRound(button.innerHTML,computerPlay());
+    });
+
 });
 
+
+//METHOD 2 
+//Bubbling Adding event listener to button that calls playRound() function
+
+//const option1 = document.querySelector("#choice1");
+//const option2 = document.querySelector("#choice2");
+//const option3 = document.querySelector("#choice3");
+
+//document.body.addEventListener('click', event => {
+//    if (event.target !== option1 && event.target !== option2 && event.target !== option3) {
+//        return 
+//    }
+//    playRound(event.target.innerHTML,computerPlay());
+//});
+
+
+
+
+//if(playRound(thisArg.innerHTML,computerPlay()).winner == "Player"){
+    
+//}
+
+
+
+
+
+
+//playRound(choice, computerPlay());
+
+//TWO CHOICES, EITHER CALL PLAYROUND AND USE CHOICES ORRRR CODE BUTTON TO CALL PLAYROUND
+
+
+//let playerSelection= btn.innerHTML;
+//console.log("Player selection:" + playerSelection); //Checks to see what playerSelection and computerSelection are
+//console.log("Computer selection:" + computerSelection);
+//btn.addEventListener("click", playRound);
+    //console.log(playRound(choice.innerHTML,computerPlay())); //Works only with first button, need to put them into container and forEach
+//});
 
 
 

@@ -3,19 +3,30 @@
 <html>
     <head>
         <title> Rock Paper Scissors </title>
-        <meta charset = "UTF-8"> 
+        <meta charset = "UTF-8">
+        <link href="style.css" rel="stylesheet">
         <script src= "game.js" defer></script> <!-- Allows  DOM HTML to load before JS runs -->
     </head>
 
-    <body>
+    <body class='body'>
         <h1>
-            Ultimate Rock, Paper, Scissors!
+           <strong>Ultimate Rock, Paper, Scissors!</strong> 
         </h1>
         
-        <button id="choice1">Rock</button>
-        <button id="choice2">Scissors</button>
-        <button id="choice3">Paper</button>
+        <div id="container">
+            <button id="choice1">Rock</button>
+            <button id="choice2">Scissors</button>
+            <button id="choice3">Paper</button>
+        </div>
 
+        <div id="score">You: <span id="playerCounter">0 </span> 
+            Comp: <span id="compCounter">0</span>
+        </div>
+
+        <div id="roundAnnouncement"> </div>
+        <div id="winAnnouncement"> </div>
+
+        <!-- <img src= "images/backgroundimg1.png" alt="Background image" > -->
     </body>
 
 
