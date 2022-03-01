@@ -31,6 +31,10 @@
 
 
 @media screen and (min-width: 600px) and (max-width: 1200px){
+    h1{
+        font-size: 45px;
+    }
+
     #score{
         margin: 20px 200px;
 
@@ -38,14 +42,15 @@
     }
 
     #roundAnnouncement{
-        margin-bottom: 20px;
-        font-size: 50px;
+        margin-bottom: 40px;
+        font-size: 30px;
+        margin-top: 40px;
 
     }
 
     #winAnnouncement{
-        margin-bottom: 20px;
-        font-size: 25px;
+        margin-bottom: 40px;
+        font-size: 35px;
     }
 
 }
