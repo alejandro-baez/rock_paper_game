@@ -1,10 +1,36 @@
+@media screen and (min-width: 600px) {
+    h1{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;    
+    border: solid;
+    */
+        margin: 30px 300px;
+
+    }
+
+    #score{
+        margin: 10px 550px;
+    }
+
+    #roundAnnouncement{
+        margin: 20px 500px; 
+    }
+
+    #winAnnouncement{
+        margin: 20px 420px;
+    }
+
+}
+
 h1{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
-    margin: 30px 300px;
     border: solid;
+    text-align: center;
 
 }
 
@@ -20,7 +46,7 @@ h1{
     justify-content: center;
     font-weight: bold;
     background-color: white;
-    margin: 10px 550px;
+    /*margin: 10px 550px; */
     justify-content: space-around;
 }
 
@@ -31,7 +57,7 @@ h1{
     justify-content: center;
     font-weight: bold;
     background-color: white;
-    margin: 20px 500px; 
+    /*margin: 20px 500px; */ 
 }
 
 #winAnnouncement{
@@ -40,12 +66,52 @@ h1{
     justify-content: center;
     background-color: white;
     font-weight: bolder;
-    margin: 20px 420px;
+    /*margin: 20px 420px; */
 
 }
+
 
 body{
     background-image: url('images/backgroundimg1.png');
     background-size: 300px;
 }
 
+@media only screen and (max-width: 600px) {
+    h1{
+        font-size: 30px;
+        padding: 5px;
+        word-wrap: break-word;
+        float: left;
+        /*
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        */
+        
+    }
+
+    #score{
+        margin-top: 20px;
+        padding: 5px;
+        /*
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        */
+    }    
+
+    #roundAnnouncement{
+        margin-top: 20px;
+    }
+
+    #winAnnouncement{
+        margin-top: 20px;
+        padding: 5px;
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+
+
+}
