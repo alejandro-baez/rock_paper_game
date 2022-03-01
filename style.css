@@ -68,6 +68,9 @@ h1{
     padding: 20px;
 }
 
+button{
+    font-size: 25px;
+}
 
 #score{
     display: flex;
