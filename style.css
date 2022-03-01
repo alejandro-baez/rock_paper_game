@@ -1,4 +1,4 @@
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1200px) {
     h1{
     /* display: flex;
     align-items: center;
@@ -6,11 +6,14 @@
     background-color: white;    
     border: solid;
     */
+
+
         margin: 30px 300px;
 
     }
 
     #score{
+        
         margin: 10px 550px;
     }
 
@@ -23,6 +26,32 @@
     }
 
 }
+
+
+
+
+@media screen and (min-width: 600px) and (max-width: 1200px){
+    #score{
+        margin: 20px 200px;
+
+
+    }
+
+    #roundAnnouncement{
+        margin-bottom: 20px;
+        font-size: 20px;
+
+    }
+
+    #winAnnouncement{
+        margin-bottom: 20px;
+        font-size: 25px;
+    }
+
+}
+
+
+
 
 h1{
     display: flex;
@@ -48,6 +77,15 @@ h1{
     background-color: white;
     /*margin: 10px 550px; */
     justify-content: space-around;
+    text-align: center;
+}
+
+#playerCounter{
+    font-size: 30px;
+}
+
+#compCounter{
+    font-size: 30px;
 }
 
 
@@ -58,6 +96,7 @@ h1{
     font-weight: bold;
     background-color: white;
     /*margin: 20px 500px; */ 
+
 }
 
 #winAnnouncement{
@@ -68,6 +107,7 @@ h1{
     font-weight: bolder;
     /*margin: 20px 420px; */
 
+
 }
 
 
@@ -75,6 +115,10 @@ body{
     background-image: url('images/backgroundimg1.png');
     background-size: 300px;
 }
+
+
+
+
 
 @media only screen and (max-width: 600px) {
     h1{
