@@ -86,6 +86,7 @@ function playRound(playerSelection, computerSelection){
             winAnnouncement.innerHTML = "GAME OVER! Player WON GAME";
         //    document.body.removeEventListener("click", playRound);
             removeClick();
+            tryAgain.removeAttribute("disabled");
         }
 
     } 
@@ -106,6 +107,7 @@ function playRound(playerSelection, computerSelection){
             winAnnouncement.innerHTML = "GAME OVER! Computer WON GAME";
         //    document.body.removeEventListener("click", playRound);
             removeClick();
+            tryAgain.removeAttribute("disabled");
         }
     }
 
@@ -119,9 +121,10 @@ function playRound(playerSelection, computerSelection){
 
 }
 
+//Making function removeClick to disable choice buttons after game finishes
 function removeClick(){
 
-    const buttons = document.querySelectorAll("button");
+    const buttons = document.querySelectorAll("#choice");
     buttons.forEach((button) => {
         
         button.removeEventListener("click", playRound);
@@ -130,6 +133,16 @@ function removeClick(){
 
 }
 
+//Creating a button that refreshes page after 
+
+const tryAgain = document.querySelector('#tryAgain');
+
+tryAgain.addEventListener("click", () => {
+    window.location.reload(true);
+});
+
+//Disabling the tryAgain button and making it reactivate at the end
+tryAgain.disabled=true;
 
 
 
@@ -138,7 +151,7 @@ function removeClick(){
 //
 //Looping Adding event listener to button that calls playRound() function 
 //
-const buttons= document.querySelectorAll("button"); //Creates a nodelist with all buttons
+const buttons= document.querySelectorAll("#choice"); //Creates a nodelist with all buttons
 buttons.forEach((button) => {                       //biggest issue is that forEach cannot be bound
 
     button.addEventListener("click", () => {

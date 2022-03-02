@@ -78,6 +78,19 @@ button{
     font-size: 20px;
 }
 
+#container2{
+    text-align: center;
+    padding: 20px;
+}
+/*
+#tryAgain{
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+*/
+
 #score{
     display: flex;
     align-items: center;
