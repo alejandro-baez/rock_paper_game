@@ -23,6 +23,7 @@
 
     #winAnnouncement{
         margin: 20px 420px;
+        font-size: 20px;
     }
 
 }
@@ -74,7 +75,7 @@ h1{
 }
 
 button{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #score{
