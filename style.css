@@ -29,7 +29,7 @@
 
 
 
-
+/*MOBILE PHONE */
 @media screen and (min-width: 600px) and (max-width: 1200px){
     h1{
         font-size: 45px;
@@ -114,6 +114,7 @@ button{
     background-color: white;
     font-weight: bolder;
     /*margin: 20px 420px; */
+    text-align: center;
 
 
 }
